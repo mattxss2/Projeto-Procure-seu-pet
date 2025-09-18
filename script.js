@@ -123,6 +123,7 @@ function AddPetForm({ onAddPet }) {
         };
         reader.readAsDataURL(image);
     };
+    
 // --- RENDERIZA O FORMULÁRIO ---
     return (
         <React.Fragment>
@@ -154,7 +155,7 @@ function AddPetForm({ onAddPet }) {
                 {errors.ownerName && <span className="error-message">{errors.ownerName}</span>}
                 
                 <label>Telefone para Contato:</label>
-                {/* ATUALIZADO: O input de telefone agora usa a nova função e tem um maxLength */}
+                {/* Input para telefone */}
                 <input 
                     type="tel" 
                     value={contact} 
@@ -239,6 +240,7 @@ function App() {
 
     return (
         <React.Fragment>
+        
             {/* CÓDIGO DO HEADER */}
             <header>
                 <div className="header-content">
@@ -308,7 +310,8 @@ function App() {
                     </div>
                 </div>
             )}
-            
+
+            {/*Feedback de pet ja cadastrado */}
             {showSuccessModal && (
                 <SuccessModal 
                     message="O seu pet foi cadastrado e já está na lista 'A Procura'." 
@@ -324,6 +327,6 @@ function App() {
     );
 }
 
-// --- Renderiza a aplicação na div #root (FORMA CORRETA) ---
+// --- Renderiza a aplicação na div #root  ---
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
